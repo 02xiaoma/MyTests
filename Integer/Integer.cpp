@@ -200,7 +200,7 @@ xiaoma::Integer xiaoma::Integer::operator-(const Integer &b) const
 		}
 		else
 		{
-			return -((-(*this) + b));
+			return -((b - (*this)));
 		}
 	}
 	else if (!sign && !b.sign)
@@ -359,6 +359,7 @@ bool xiaoma::Integer::operator<(const Integer &b) const
 	if (((sign && b.sign) == false) &&\
 		(sign || b.sign))
 	{
+		// 两个数不同号
 		return b.sign;
 	}
 	else
